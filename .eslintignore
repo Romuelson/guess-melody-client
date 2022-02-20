@@ -1,0 +1,6 @@
+# Модули и производственные папки
+dist/
+configs/
+node_modules/
+jspm_packages/
+bower_components/
