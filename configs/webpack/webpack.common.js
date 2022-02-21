@@ -20,11 +20,11 @@ module.exports = {
 	plugins: [
 		new FriendlyErrorsWebpackPlugin(),
 		new webpack.DefinePlugin(envKeys),
+		new ForkTsCheckerWebpackPlugin(),
 		new ESLintPlugin({
 			extensions: ['js', 'jsx','ts', 'tsx']
 		}),
-		new StylelintPlugin(),
-		new ForkTsCheckerWebpackPlugin()
+		new StylelintPlugin()
 	],
 	output: {
 		path: path.resolve(__dirname, '../../dist'),
@@ -73,13 +73,13 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react'],
+						presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
 						cacheDirectory: true
 					}
 				}
 			},
 			{
-				test: /\.tsx?$/,
+				test: /\.(ts|tsx)$/,
 				loader: 'ts-loader',
 				exclude: /node_modules/,
 				options: {
