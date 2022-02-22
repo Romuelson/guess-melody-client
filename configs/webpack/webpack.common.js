@@ -22,7 +22,7 @@ module.exports = {
 		new webpack.DefinePlugin(envKeys),
 		new ForkTsCheckerWebpackPlugin(),
 		new ESLintPlugin({
-			extensions: ['js', 'jsx','ts', 'tsx']
+			extensions: ['js', 'jsx', 'ts', 'tsx']
 		}),
 		new StylelintPlugin()
 	],
@@ -32,7 +32,12 @@ module.exports = {
 		pathinfo: false
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css','.scss', '.sass']
+		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss', '.sass'],
+		alias: {
+			"@src": path.resolve(__dirname, '../../src'),
+			"@public": path.resolve(__dirname, '../../public/images'),
+			"@styles": path.resolve(__dirname, '../../public/styles')
+		}
 	},
 	devtool: false,
 	optimization: {

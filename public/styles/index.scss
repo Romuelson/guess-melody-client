@@ -1,11 +1,18 @@
 /* Глобальные стили */
 // @import "./layouts/variables.scss";
-// @import "./layouts/base.scss";
-
-/* Миксины */
+@import './layouts/base.scss';
+@import './layouts/fonts.scss';
 
 /* Блоки */
-@import './blocks/common/header/header.scss';
+@import './blocks/common/app/app.scss';
+@import './blocks/common/main/main.scss';
+@import './blocks/common/logo/logo.scss';
 
-// @import "./blocks/common/catalog/catalog.scss";
-// @import "./blocks/common/about/about.scss";
+@import './blocks/common/welcome/welcome.scss';
+@import './blocks/common/welcome/__logo/logo.scss';
+@import './blocks/common/welcome/__button/button.scss';
+@import './blocks/common/welcome/__rules-title/rules-title.scss';
+@import './blocks/common/welcome/__text/text.scss';
+@import './blocks/common/welcome/__rules-list/rules-list.scss';
+
+@import './blocks/common/button/button.scss';

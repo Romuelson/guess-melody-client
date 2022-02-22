@@ -1,0 +1,35 @@
+/* Кириллица */
+
+@font-face {
+	font-weight: 400;
+	font-family: 'Fira Sans';
+	font-style: normal;
+	src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+		url('../fonts/FiraSans-Regular.woff2') format('woff2');
+}
+
+/* Латинский */
+
+@font-face {
+	font-weight: 400;
+	font-family: 'Fira Sans';
+	font-style: normal;
+	src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+		url('../fonts/FiraSans-Regular-latin.woff2') format('woff2');
+}
+
+@font-face {
+	font-weight: 500;
+	font-family: 'Fira Sans';
+	font-style: normal;
+	src: local('Fira Sans Medium'), local('FiraSans-Medium'),
+		url('../fonts/FiraSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-weight: 700;
+	font-family: 'Fira Sans';
+	font-style: normal;
+	src: local('Fira Sans Bold'), local('FiraSans-Bold'),
+		url('../fonts/FiraSans-Bold.woff2') format('woff2');
+}

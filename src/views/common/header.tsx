@@ -1,13 +1,7 @@
 import React from 'react';
-import Menu from '../../components/menu/menu';
 
 function Header() {
-	return (
-		<>
-			<h1>Header</h1>
-			<Menu />
-		</>
-	);
+	return <h1>Header</h1>;
 }
 
 export default Header;

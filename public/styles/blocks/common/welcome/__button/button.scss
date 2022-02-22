@@ -1,0 +1,19 @@
+.welcome__button {
+	position: absolute;
+	top: 420px;
+	left: 350px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	background: 0 0;
+	border-width: 70px 0 70px 100px;
+	border-color: transparent transparent transparent #ff9749;
+}
+
+.welcome__button:hover {
+	transform: scale(1.05);
+}
+
+.welcome__button:active {
+	transform: scale(1.04);
+}

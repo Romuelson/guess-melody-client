@@ -3,10 +3,25 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Угадай мелодию</title>
 </head>
 <body class="page__body">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<div id="root">
-	</div>
+
+	<main class="app">
+		<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: -1200em;">
+			<filter id="blur">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="5"></feGaussianBlur>
+				<feOffset dx="0" dy="0"></feOffset>
+				<feMerge>
+					<feMergeNode></feMergeNode>
+					<feMergeNode in="SourceGraphic"></feMergeNode>
+				</feMerge>
+			</filter>
+		</svg>
+
+		<section class="main" id="root">
+		</section>
+	</main>
 </body>
 </html>

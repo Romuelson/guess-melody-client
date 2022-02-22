@@ -20,6 +20,6 @@
 		"jsx": "react-jsx",
 		"locale": "ru"
 	},
-	"include": ["src"],
+	"include": ["src", "src/assets.d.ts"],
 	"exclude": ["configs", "dist", "node_modules", "public"]
 }
