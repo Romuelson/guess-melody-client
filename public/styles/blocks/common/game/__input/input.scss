@@ -1,0 +1,7 @@
+.game__input:checked + .game__check {
+	background-position: -5px -5px;
+}
+
+.game__input:focus + .game__check {
+	outline: -webkit-focus-ring-color auto 5px;
+}
