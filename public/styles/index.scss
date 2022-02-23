@@ -58,3 +58,20 @@
 @import './blocks/common/login/__input/input.scss';
 @import './blocks/common/login/__error/error.scss';
 @import './blocks/common/login/__button/button.scss';
+
+@import './blocks/common/result/result.scss';
+@import './blocks/common/result/__logo/logo.scss';
+@import './blocks/common/result/__title/title.scss';
+@import './blocks/common/result/__total/total.scss';
+@import './blocks/common/result/__text/text.scss';
+@import './blocks/common/result/__replay/replay.scss';
+@import './blocks/common/result/__answer/answer.scss';
+@import './blocks/common/result/__list/list.scss';
+@import './blocks/common/result/__item/item.scss';
+@import './blocks/common/result/__extra/extra.scss';
+@import './blocks/common/result/__correct/correct.scss';
+@import './blocks/common/result/__wrong/wrong.scss';
+@import './blocks/common/result/__genre/genre.scss';
+
+@import './blocks/common/result-logout/result-logout.scss';
+@import './blocks/common/result-logout/__link/link.scss';
