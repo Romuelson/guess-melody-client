@@ -1,0 +1,16 @@
+.modal {
+	position: absolute;
+	top: 375px;
+	z-index: 1;
+	padding: 50px 20px;
+	font-size: 18px;
+	text-align: center;
+	background-color: #f0eed5;
+	border: 5px solid rgb(0 0 0 / 80%);
+	border-radius: 50px;
+	animation: bounce 0.6s;
+}
+
+.modal--hidden {
+	display: none;
+}

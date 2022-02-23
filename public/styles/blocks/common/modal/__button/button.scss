@@ -1,0 +1,9 @@
+.modal__button {
+	font-weight: 500;
+	font-family: 'Fira Sans', Arial, sans-serif;
+	font-style: normal;
+}
+
+.modal__button:not(:last-of-type) {
+	margin-right: 10px;
+}
