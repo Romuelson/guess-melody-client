@@ -1,0 +1,16 @@
+.login__input {
+	width: 150px;
+	padding: 5px 10px;
+	background-color: #f0eed5;
+	border: 3px solid #230d1a;
+	border-radius: 15px;
+}
+
+.login__input:hover {
+	border-color: #ff9749;
+}
+
+.login__input--error,
+.login__input--error:hover {
+	border-color: #f00000;
+}

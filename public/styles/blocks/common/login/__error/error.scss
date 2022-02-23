@@ -1,0 +1,15 @@
+.login__error {
+	position: absolute;
+	right: 10px;
+	bottom: -20px;
+	display: none;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: 'Fira Sans', Arial, sans-serif;
+	color: #f00000;
+	font-style: normal;
+}
+
+.login__input--error + .login__error {
+	display: inline;
+}

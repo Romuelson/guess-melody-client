@@ -1,0 +1,23 @@
+.login {
+	display: flex;
+	flex-flow: wrap;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.login__total {
+	width: 500px;
+	margin: 30px 0 0;
+	font-weight: 400;
+	font-size: 20px;
+	font-family: 'Fira Sans', Arial, sans-serif;
+	text-align: center;
+	color: #230d1a;
+	font-style: italic;
+}
+
+.login__total--fail {
+	margin-top: 170px;
+}
