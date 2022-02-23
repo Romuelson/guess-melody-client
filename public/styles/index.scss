@@ -34,4 +34,7 @@
 @import './blocks/common/timer/__line/line.scss';
 @import './blocks/common/timer/__value/value.scss';
 @import './blocks/common/timer/__dots/dots.scss';
-@import './blocks/common/timer/__value--finished/finished.scss';
+
+@import './blocks/common/track/track.scss';
+@import './blocks/common/track/__button/button.scss';
+@import './blocks/common/track/__status/status.scss';

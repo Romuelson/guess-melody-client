@@ -1,0 +1,9 @@
+.track__status {
+	flex-grow: 1;
+	height: 55px;
+	background-image: url('../images/player-background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: fadein 1000ms ease-out;
+	animation-iteration-count: 1;
+}
