@@ -57,19 +57,23 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(css|s[ac]ss)$/i,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', {
-					loader: 'postcss-loader',
-					options: {
-						postcssOptions: {
-							plugins: [
-								[
-									'postcss-preset-env', {}
+				use: [MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader'
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									[
+										'postcss-preset-env', {}
+									]
 								]
-							]
+							}
 						}
-					}
-				},
-				'sass-loader'
+					},
+					{ loader: 'sass-loader' }
 				]
 			},
 			{
@@ -89,6 +93,13 @@ module.exports = {
 				exclude: /node_modules/,
 				options: {
 					transpileOnly : true
+				}
+			},
+			{
+				test: /\.svg/,
+				use: {
+				  loader: "svg-url-loader",
+				  options: {}
 				}
 			}
 		]

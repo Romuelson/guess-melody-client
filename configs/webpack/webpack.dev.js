@@ -50,13 +50,13 @@ module.exports = {
 					filename: 'images/[name][ext][query]'
 				}
 			},
-			{
-				test: /\.svg/,
-				type: 'asset/inline',
-				generator: {
-					filename: 'images/svg/[name][ext][query]'
-				}
-			},
+			// {
+			// 	test: /\.svg/,
+			// 	type: 'asset/inline',
+			// 	generator: {
+			// 		filename: 'images/svg/[name][ext][query]'
+			// 	}
+			// },
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',

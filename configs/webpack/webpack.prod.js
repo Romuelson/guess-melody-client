@@ -58,13 +58,13 @@ module.exports = {
 					filename: 'images/[contenthash].min[ext][query]'
 				}
 			},
-			{
-				test: /\.svg/,
-				type: 'asset/inline',
-				generator: {
-					filename: 'images/svg/[contenthash].min[ext][query]'
-				}
-			},
+			// {
+			// 	test: /\.svg/,
+			// 	type: 'asset/inline',
+			// 	generator: {
+			// 		filename: 'images/svg/[contenthash].min[ext][query]'
+			// 	}
+			// },
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
