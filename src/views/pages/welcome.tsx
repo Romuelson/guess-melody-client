@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
-import Logo from '@public/melody-logo.png';
+import Logo from '@images/melody-logo.png';
 
 function Welcome() {
 	return (

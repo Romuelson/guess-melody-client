@@ -35,7 +35,8 @@ module.exports = {
 		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss', '.sass'],
 		alias: {
 			"@src": path.resolve(__dirname, '../../src'),
-			"@public": path.resolve(__dirname, '../../public/images'),
+			"@public": path.resolve(__dirname, '../../public'),
+			"@images": path.resolve(__dirname, '../../public/images'),
 			"@styles": path.resolve(__dirname, '../../public/styles')
 		}
 	},
