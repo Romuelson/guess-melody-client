@@ -8,6 +8,8 @@ export enum AppRoute {
 	Root = '/',
 	Game = '/game',
 	NotFound = '*',
+	GenreDev = '/genre',
+	ArtistDev = '/artist',
 }
 
 export enum AuthorizationStatus {

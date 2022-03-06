@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import melodyLogoGinger from '@images/melody-logo-ginger.png';
 
-function Logo() {
+function Logo(): JSX.Element {
 	return (
 		<Link className="game__back" to="/">
 			<span className="visually-hidden">Сыграть ещё раз</span>
