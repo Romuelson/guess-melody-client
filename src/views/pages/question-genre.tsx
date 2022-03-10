@@ -4,25 +4,30 @@
 /* eslint-disable react/style-prop-object */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { ChangeEvent, FormEvent, useState } from 'react';
-import GameHeader from '../common/game-header';
+import React, {
+	ChangeEvent,
+	FormEvent,
+	useState,
+	PropsWithChildren,
+} from 'react';
 
 import {
 	QuestionGenreType,
 	UserGenreQuestionAnswer,
 } from '../../types/question';
+import Logo from '../../components/logo/logo';
 
-type QuestionGenreProps = {
+type QuestionGenreProps = PropsWithChildren<{
 	question: QuestionGenreType;
 	onAnswer: (
 		question: QuestionGenreType,
 		answer: UserGenreQuestionAnswer
 	) => void;
 	renderPlayer: (src: string, playerIndex: number) => JSX.Element;
-};
+}>;
 
 function QuestionGenre(props: QuestionGenreProps): JSX.Element {
-	const { question, onAnswer, renderPlayer } = props;
+	const { question, onAnswer, renderPlayer, children } = props;
 	const { answers, genre } = question;
 
 	const [userAnswers, setUserAnswers] = useState([
@@ -34,7 +39,27 @@ function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 
 	return (
 		<section className="game game--genre">
-			<GameHeader />
+			<header className="game__header">
+				<Logo />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="timer"
+					viewBox="0 0 780 780"
+				>
+					<circle
+						className="timer__line"
+						cx="390"
+						cy="390"
+						r="370"
+						style={{
+							filter: 'url(#blur)',
+							transform: 'rotate(-90deg) scaleY(-1)',
+							transformOrigin: 'center',
+						}}
+					/>
+				</svg>
+				{children}
+			</header>
 
 			<section className="game__screen">
 				<h2 className="game__title">Выберите {genre} треки</h2>

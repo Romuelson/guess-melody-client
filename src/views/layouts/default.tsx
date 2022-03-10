@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { AppRoute } from '../../const';
-import { Questions } from '../../types/question';
+import { AppRoute, MAX_MISTAKE_COUNT } from '../../const';
 
 import NotFound from '../pages/not-found';
 import Welcome from '../pages/welcome';
@@ -12,14 +11,13 @@ import Result from '../pages/result';
 import Game from '../../components/game/game';
 import PrivateOutlet from '../../components/private-outlet/private-outlet';
 
-type DefaultProps = {
-	questions: Questions;
-};
-
-function Default({ questions }: DefaultProps) {
+function Default() {
 	return (
 		<Routes>
-			<Route path={AppRoute.Root} element={<Welcome />} />
+			<Route
+				path={AppRoute.Root}
+				element={<Welcome errorsCount={MAX_MISTAKE_COUNT} />}
+			/>
 			<Route path={AppRoute.Login} element={<Login />} />
 			<Route path={AppRoute.Lose} element={<Lose />} />
 
@@ -27,10 +25,7 @@ function Default({ questions }: DefaultProps) {
 				<Route path="" element={<Result />} />
 			</Route>
 
-			<Route
-				path={AppRoute.Game}
-				element={<Game questions={questions} />}
-			/>
+			<Route path={AppRoute.Game} element={<Game />} />
 
 			<Route path={AppRoute.NotFound} element={<NotFound />} />
 		</Routes>

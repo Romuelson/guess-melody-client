@@ -1,3 +1,5 @@
+import { GameType } from '../const';
+
 export type ArtistAnswer = {
 	artist: string;
 	picture: string;
@@ -11,7 +13,7 @@ export type Song = {
 export type QuestionArtistType = {
 	answers: ArtistAnswer[];
 	song: Song;
-	type: string;
+	type: `${GameType.Artist}`;
 };
 
 export type GenreAnswer = {
@@ -22,7 +24,7 @@ export type GenreAnswer = {
 export type QuestionGenreType = {
 	answers: GenreAnswer[];
 	genre: string;
-	type: string;
+	type: `${GameType.Genre}`;
 };
 
 export type Question = QuestionArtistType | QuestionGenreType;
@@ -32,3 +34,5 @@ export type Questions = Question[];
 export type UserGenreQuestionAnswer = readonly boolean[];
 
 export type UserArtistQuestionAnswer = string;
+
+export type UserAnswer = UserGenreQuestionAnswer | UserArtistQuestionAnswer;

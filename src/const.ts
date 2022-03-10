@@ -1,5 +1,7 @@
 export const FIRST_GAME_STEP = 0;
 export const MAX_MISTAKE_COUNT = 3;
+export const ERROR_COUNT = 3;
+export const STEP_COUNT = 1;
 
 export enum AppRoute {
 	Login = '/login',
@@ -8,8 +10,6 @@ export enum AppRoute {
 	Root = '/',
 	Game = '/game',
 	NotFound = '*',
-	GenreDev = '/genre',
-	ArtistDev = '/artist',
 }
 
 export enum AuthorizationStatus {
@@ -27,4 +27,15 @@ export enum APIRoute {
 	Questions = '/questions',
 	Login = '/login',
 	Logout = '/logout',
+}
+
+export enum ReducerType {
+	Process = 'game/process',
+	Data = 'game/data',
+}
+
+export enum ActionType {
+	incrementStep = 'incrementStep',
+	checkUserAnswer = 'checkUserAnswer',
+	resetGame = 'reset',
 }

@@ -2,30 +2,50 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { ChangeEvent } from 'react';
-import GameHeader from '../common/game-header';
+import React, { ChangeEvent, PropsWithChildren } from 'react';
 
 import {
 	QuestionArtistType,
 	UserArtistQuestionAnswer,
 } from '../../types/question';
+import Logo from '../../components/logo/logo';
 
-type QuestionArtistProps = {
+type QuestionArtistProps = PropsWithChildren<{
 	question: QuestionArtistType;
 	onAnswer: (
 		question: QuestionArtistType,
 		answer: UserArtistQuestionAnswer
 	) => void;
 	renderPlayer: (src: string, playerIndex: number) => JSX.Element;
-};
+}>;
 
 function QuestionArtist(props: QuestionArtistProps) {
-	const { question, onAnswer, renderPlayer } = props;
+	const { question, onAnswer, renderPlayer, children } = props;
 	const { answers, song } = question;
 
 	return (
 		<section className="game game--artist">
-			<GameHeader />
+			<header className="game__header">
+				<Logo />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="timer"
+					viewBox="0 0 780 780"
+				>
+					<circle
+						className="timer__line"
+						cx="390"
+						cy="390"
+						r="370"
+						style={{
+							filter: 'url(#blur)',
+							transform: 'rotate(-90deg) scaleY(-1)',
+							transformOrigin: 'center',
+						}}
+					/>
+				</svg>
+				{children}
+			</header>
 
 			<section className="game__screen">
 				<h2 className="game__title">Кто исполняет эту песню?</h2>
