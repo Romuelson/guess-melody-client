@@ -89,6 +89,7 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.7.2",
+		"axios": "^0.26.1",
 		"core-js": "^3.21.0",
 		"dotenv": "^16.0.0",
 		"react": "^17.0.2",
