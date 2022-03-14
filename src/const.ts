@@ -38,4 +38,5 @@ export enum ActionType {
 	incrementStep = 'incrementStep',
 	checkUserAnswer = 'checkUserAnswer',
 	resetGame = 'reset',
+	loadQuestions = 'loadQuestions',
 }
