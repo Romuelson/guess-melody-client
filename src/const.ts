@@ -32,6 +32,7 @@ export enum APIRoute {
 export enum ReducerType {
 	Process = 'game/process',
 	Data = 'game/data',
+	User = 'user/process',
 }
 
 export enum ActionType {
@@ -39,4 +40,5 @@ export enum ActionType {
 	checkUserAnswer = 'checkUserAnswer',
 	resetGame = 'reset',
 	loadQuestions = 'loadQuestions',
+	requireAuthorization = 'requireAuthorization',
 }

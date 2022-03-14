@@ -7,7 +7,7 @@ import {
 	ActionType,
 } from '../../../const';
 
-import questions from '../../../mocks/questions';
+import { questions } from '../../../mocks/questions';
 import { Question, UserAnswer } from '../../../types/question';
 
 import { isAnswerCorrect } from '../../../game';
