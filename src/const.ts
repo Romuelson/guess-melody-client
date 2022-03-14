@@ -42,3 +42,10 @@ export enum ActionType {
 	loadQuestions = 'loadQuestions',
 	requireAuthorization = 'requireAuthorization',
 }
+
+export enum AsyncActionType {
+	FetchQuestions = '/fetchQuestions',
+	CheckAuth = '/checkAuth',
+	Login = '/asLogin',
+	Logout = '/asLogout',
+}

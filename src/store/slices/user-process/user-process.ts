@@ -18,4 +18,5 @@ const userProcess = createSlice({
 	},
 });
 
-export default userProcess;
+export const { requireAuthorization } = userProcess.actions;
+export default userProcess.reducer;

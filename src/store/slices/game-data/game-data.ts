@@ -22,4 +22,5 @@ const gameData = createSlice({
 	},
 });
 
-export default gameData;
+export const { loadQuestions } = gameData.actions;
+export default gameData.reducer;

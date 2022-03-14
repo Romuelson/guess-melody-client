@@ -4,7 +4,8 @@ import { getToken } from './token';
 const BACKEND_URL = 'https://9.react.pages.academy/guess-melody';
 const REQUEST_TIMEOUT = 5000;
 
-const createAPI = (): AxiosInstance => {
+// eslint-disable-next-line import/prefer-default-export
+export const createAPI = (): AxiosInstance => {
 	const api = axios.create({
 		baseURL: BACKEND_URL,
 		timeout: REQUEST_TIMEOUT,
@@ -22,5 +23,3 @@ const createAPI = (): AxiosInstance => {
 
 	return api;
 };
-
-export default createAPI;
