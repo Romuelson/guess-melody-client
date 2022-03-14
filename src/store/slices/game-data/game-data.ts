@@ -18,6 +18,7 @@ const gameData = createSlice({
 			action: PayloadAction<Questions>
 		) => {
 			state.questions = action.payload;
+			state.isDataLoaded = true;
 		},
 	},
 });

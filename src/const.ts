@@ -2,6 +2,13 @@ export const FIRST_GAME_STEP = 0;
 export const MAX_MISTAKE_COUNT = 3;
 export const ERROR_COUNT = 3;
 export const STEP_COUNT = 1;
+export const TIMEOUT_SHOW_ERROR = 2000;
+
+export enum HttpCode {
+	BAD_REQUEST = 400,
+	UNAUTHORIZED = 401,
+	NOT_FOUND = 404,
+}
 
 export enum AppRoute {
 	Login = '/login',
@@ -33,6 +40,7 @@ export enum ReducerType {
 	Process = 'game/process',
 	Data = 'game/data',
 	User = 'user/process',
+	Error = 'error',
 }
 
 export enum ActionType {
@@ -41,6 +49,7 @@ export enum ActionType {
 	resetGame = 'reset',
 	loadQuestions = 'loadQuestions',
 	requireAuthorization = 'requireAuthorization',
+	setError = 'setError',
 }
 
 export enum AsyncActionType {
@@ -48,4 +57,5 @@ export enum AsyncActionType {
 	CheckAuth = '/checkAuth',
 	Login = '/asLogin',
 	Logout = '/asLogout',
+	ClearError = '/clearError',
 }

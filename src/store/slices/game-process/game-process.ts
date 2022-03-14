@@ -7,7 +7,6 @@ import {
 	ActionType,
 } from '../../../const';
 
-import { questions } from '../../../mocks/questions';
 import { Question, UserAnswer } from '../../../types/question';
 
 import { isAnswerCorrect } from '../../../game';
@@ -15,7 +14,6 @@ import { isAnswerCorrect } from '../../../game';
 const initialState = {
 	mistakes: 0,
 	step: FIRST_GAME_STEP,
-	questions,
 };
 
 const gameProcess = createSlice({

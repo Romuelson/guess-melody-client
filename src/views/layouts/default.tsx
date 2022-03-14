@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { AppRoute, MAX_MISTAKE_COUNT } from '../../const';
+import { AppRoute, AuthorizationStatus, MAX_MISTAKE_COUNT } from '../../const';
 
 import NotFound from '../pages/not-found';
 import Welcome from '../pages/welcome';
@@ -9,9 +9,13 @@ import Login from '../pages/login';
 import Lose from '../pages/lose';
 import Result from '../pages/result';
 import Game from '../../components/game/game';
-import PrivateOutlet from '../../components/private-outlet/private-outlet';
+import PrivateRoute from '../../components/private-route/private-route';
 
-function Default() {
+type DefaultProps = {
+	authStatus: AuthorizationStatus;
+};
+
+function Default({ authStatus }: DefaultProps) {
 	return (
 		<Routes>
 			<Route
@@ -21,9 +25,14 @@ function Default() {
 			<Route path={AppRoute.Login} element={<Login />} />
 			<Route path={AppRoute.Lose} element={<Lose />} />
 
-			<Route path={AppRoute.Result} element={<PrivateOutlet />}>
-				<Route path="" element={<Result />} />
-			</Route>
+			<Route
+				path={AppRoute.Result}
+				element={
+					<PrivateRoute authorizationStatus={authStatus}>
+						<Result />
+					</PrivateRoute>
+				}
+			/>
 
 			<Route path={AppRoute.Game} element={<Game />} />
 

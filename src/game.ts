@@ -1,4 +1,4 @@
-import { GameType } from './const';
+import { AuthorizationStatus, GameType } from './const';
 import {
 	Question,
 	UserAnswer,
@@ -36,3 +36,7 @@ export const isAnswerCorrect = (
 
 	return false;
 };
+
+export const isCheckAuth = (
+	authorizationStatus: AuthorizationStatus
+): boolean => authorizationStatus === AuthorizationStatus.Unknown;

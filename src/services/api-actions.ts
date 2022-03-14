@@ -4,6 +4,7 @@ import {
 	ReducerType,
 	AsyncActionType,
 	AuthorizationStatus,
+	TIMEOUT_SHOW_ERROR,
 } from '../const';
 import { Questions } from '../types/question';
 import { loadQuestions } from '../store/slices/game-data/game-data';
@@ -14,46 +15,73 @@ import { requireAuthorization } from '../store/slices/user-process/user-process'
 import { AuthData } from '../types/auth-data';
 import { UserData } from '../types/user-data';
 import { dropToken, saveToken } from './token';
+import { setError } from '../store/slices/error/error';
+import { errorHandle } from './error-handle';
 
 const store = setupStore();
+
+export const clearErrorAction = createAsyncThunk(
+	`${ReducerType.Error}${AsyncActionType.ClearError}`,
+	() => {
+		setTimeout(() => store.dispatch(setError('')), TIMEOUT_SHOW_ERROR);
+	}
+);
 
 export const fetchQuestionAction = createAsyncThunk(
 	`${ReducerType.Data}${AsyncActionType.FetchQuestions}`,
 	async () => {
-		const { data } = await api.get<Questions>(APIRoute.Questions);
+		try {
+			const { data } = await api.get<Questions>(APIRoute.Questions);
 
-		store.dispatch(loadQuestions(data));
+			store.dispatch(loadQuestions(data));
+		} catch (error) {
+			errorHandle(error);
+		}
 	}
 );
 
 export const checkAuthAction = createAsyncThunk(
 	`${ReducerType.User}${AsyncActionType.CheckAuth}`,
 	async () => {
-		await api.get(APIRoute.Login);
+		try {
+			await api.get(APIRoute.Login);
 
-		store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+			store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+		} catch (error) {
+			errorHandle(error);
+			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+		}
 	}
 );
 
 export const loginAction = createAsyncThunk(
 	`${ReducerType.User}${AsyncActionType.Login}`,
 	async ({ login: email, password }: AuthData) => {
-		const {
-			data: { token },
-		} = await api.post<UserData>(APIRoute.Login, { email, password });
+		try {
+			const {
+				data: { token },
+			} = await api.post<UserData>(APIRoute.Login, { email, password });
 
-		saveToken(token);
-		store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+			saveToken(token);
+			store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+		} catch (error) {
+			errorHandle(error);
+			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+		}
 	}
 );
 
 export const logoutAction = createAsyncThunk(
 	`${ReducerType.User}${AsyncActionType.Logout}`,
 	async () => {
-		await api.delete(APIRoute.Logout);
+		try {
+			await api.delete(APIRoute.Logout);
 
-		dropToken();
+			dropToken();
 
-		store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+		} catch (error) {
+			errorHandle(error);
+		}
 	}
 );
