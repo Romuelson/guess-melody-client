@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { Questions } from '../../../types/question';
 import { ActionType, ReducerType } from '../../../const';
 import { GameData } from '../../../types/state';
-import { questions as questionItem } from '../../../mocks/questions';
-import { Questions } from '../../../types/question';
 
 const initialState: GameData = {
-	questions: questionItem,
+	questions: [],
 	isDataLoaded: false,
 };
 
