@@ -3,7 +3,19 @@
 
 import melodyLogo from '@images/melody-logo.png';
 
+import { useNavigate } from 'react-router-dom';
+import { AppRoute } from '../../const';
+import { useAppDispatch, useAppSelector } from '../../hooks/use-redux';
+import { reset } from '../../store/slices/game-process/game-process';
+
 function Result() {
+	const { mistakes, step } = useAppSelector(({ PROCESS }) => PROCESS);
+
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
+
+	const correctlyQuestionsCount = step - mistakes;
+
 	return (
 		<section className="result">
 			<div className="result-logout__wrapper">
@@ -21,9 +33,17 @@ function Result() {
 			</div>
 			<h2 className="result__title">Вы настоящий меломан!</h2>
 			<p className="result__total">
-				Вы ответили правильно на 6 вопросов и совершили 2 ошибки
+				Вы ответили правильно на {correctlyQuestionsCount} вопросов и
+				совершили {mistakes} ошибки
 			</p>
-			<button className="replay" type="button">
+			<button
+				onClick={() => {
+					dispatch(reset());
+					navigate(AppRoute.Game);
+				}}
+				className="replay"
+				type="button"
+			>
 				Сыграть ещё раз
 			</button>
 		</section>
