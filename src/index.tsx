@@ -6,7 +6,9 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
+import HistoryRouter from './components/history-route/history-route';
+import browserHistory from './utils/browser-history';
 import { store } from './store/store';
 
 import App from './components/app/app';
@@ -21,10 +23,10 @@ store.dispatch(checkAuthAction());
 ReactDOM.render(
 	<StrictMode>
 		<Provider store={store}>
-			<BrowserRouter>
+			<HistoryRouter history={browserHistory}>
 				<ErrorMessage />
 				<App />
-			</BrowserRouter>
+			</HistoryRouter>
 		</Provider>
 	</StrictMode>,
 	root
