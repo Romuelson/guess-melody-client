@@ -1,10 +1,11 @@
+/* eslint-disable no-param-reassign */
+
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { getToken } from './token';
 
 const BACKEND_URL = 'https://9.react.pages.academy/guess-melody';
 const REQUEST_TIMEOUT = 5000;
 
-// eslint-disable-next-line import/prefer-default-export
 export const createAPI = (): AxiosInstance => {
 	const api = axios.create({
 		baseURL: BACKEND_URL,
@@ -13,6 +14,10 @@ export const createAPI = (): AxiosInstance => {
 
 	api.interceptors.request.use((config: AxiosRequestConfig) => {
 		const token = getToken();
+
+		if (!config.headers) {
+			config.headers = {};
+		}
 
 		if (token) {
 			config.headers['x-token'] = token;
