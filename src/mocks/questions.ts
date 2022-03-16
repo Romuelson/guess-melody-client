@@ -2,7 +2,6 @@ import { Questions } from '../types/question';
 
 const AVATAR_URL = 'https://i.pravatar.cc/128';
 
-// eslint-disable-next-line import/prefer-default-export
 export const questions: Questions = [
 	{
 		type: 'genre',

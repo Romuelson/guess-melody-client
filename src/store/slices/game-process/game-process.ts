@@ -8,15 +8,19 @@ import {
 } from '../../../const';
 
 import { Question, UserAnswer } from '../../../types/question';
-
 import { isAnswerCorrect } from '../../../game';
 
-const initialState = {
+export type GameProcess = {
+	mistakes: number;
+	step: number;
+};
+
+const initialState: GameProcess = {
 	mistakes: 0,
 	step: FIRST_GAME_STEP,
 };
 
-const gameProcess = createSlice({
+export const gameProcess = createSlice({
 	name: ReducerType.Process,
 	initialState,
 	reducers: {
@@ -42,4 +46,3 @@ const gameProcess = createSlice({
 });
 
 export const { incrementStep, reset, checkUserAnswer } = gameProcess.actions;
-export default gameProcess.reducer;

@@ -1,8 +1,7 @@
-import React from 'react';
 import { useAppSelector } from '../../hooks/use-redux';
 
 function ErrorMessage(): JSX.Element | null {
-	const { error } = useAppSelector((state) => state);
+	const { error } = useAppSelector(({ ERROR }) => ERROR);
 
 	if (error) {
 		return (

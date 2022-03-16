@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { ChangeEvent, PropsWithChildren } from 'react';
+
+import { ChangeEvent, PropsWithChildren } from 'react';
 
 import {
 	QuestionArtistType,

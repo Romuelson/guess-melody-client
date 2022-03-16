@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import melodyLogoGinger from '@images/melody-logo-ginger.png';

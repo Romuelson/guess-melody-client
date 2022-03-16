@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ActionType, ReducerType } from '../../../const';
 
-type InitialState = {
+type ErrorProcces = {
 	error: string;
 };
 
-const initialState: InitialState = {
+const initialState: ErrorProcces = {
 	error: '',
 };
 
-const error = createSlice({
+export const error = createSlice({
 	name: ReducerType.Error,
 	initialState,
 	reducers: {
@@ -20,4 +20,3 @@ const error = createSlice({
 });
 
 export const { setError } = error.actions;
-export default error.reducer;

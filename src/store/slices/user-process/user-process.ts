@@ -1,11 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ActionType, AuthorizationStatus, ReducerType } from '../../../const';
 
-const initialState = {
+export type UserProcess = {
+	authorizationStatus: AuthorizationStatus;
+};
+
+const initialState: UserProcess = {
 	authorizationStatus: AuthorizationStatus.Unknown,
 };
 
-const userProcess = createSlice({
+export const userProcess = createSlice({
 	name: ReducerType.User,
 	initialState,
 	reducers: {
@@ -19,4 +23,3 @@ const userProcess = createSlice({
 });
 
 export const { requireAuthorization } = userProcess.actions;
-export default userProcess.reducer;

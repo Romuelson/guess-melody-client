@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
 	APIRoute,
@@ -9,7 +11,7 @@ import {
 import { Questions } from '../types/question';
 import { loadQuestions } from '../store/slices/game-data/game-data';
 
-import setupStore, { api } from '../store/store';
+import { store, api } from '../store/store';
 import { requireAuthorization } from '../store/slices/user-process/user-process';
 
 import { AuthData } from '../types/auth-data';
@@ -17,8 +19,6 @@ import { UserData } from '../types/user-data';
 import { dropToken, saveToken } from './token';
 import { setError } from '../store/slices/error/error';
 import { errorHandle } from './error-handle';
-
-const store = setupStore();
 
 export const clearErrorAction = createAsyncThunk(
 	`${ReducerType.Error}${AsyncActionType.ClearError}`,

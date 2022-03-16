@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState, ComponentType } from 'react';
+import { useState, ComponentType } from 'react';
 import AudioPlayer from '../../components/audio-player/audio-player';
 
 type HOCProps = {

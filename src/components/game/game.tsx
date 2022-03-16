@@ -1,16 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { AppRoute, GameType, MAX_MISTAKE_COUNT } from '../../const';
 
-import {
-	Question,
-	QuestionArtistType,
-	QuestionGenreType,
-	Questions,
-	UserAnswer,
-} from '../../types/question';
+import { Question, UserAnswer } from '../../types/question';
 
 import withAudioPlayer from '../../hocs/with-audio-player/with-audio-player';
 import QuestionArtist from '../../views/pages/question-artist';
@@ -21,7 +14,6 @@ import { useAppDispatch, useAppSelector } from '../../hooks/use-redux';
 
 import {
 	incrementStep,
-	reset,
 	checkUserAnswer,
 } from '../../store/slices/game-process/game-process';
 
@@ -29,9 +21,8 @@ const ArtistQuestionScreenWrapped = withAudioPlayer(QuestionArtist);
 const GenreQuestionScreenWrapped = withAudioPlayer(QuestionGenre);
 
 function Game(): JSX.Element {
-	const { mistakes, step, questions } = useAppSelector(
-		(state) => state.gameProcess
-	);
+	const { mistakes, step } = useAppSelector(({ PROCESS }) => PROCESS);
+	const { questions } = useAppSelector(({ DATA }) => DATA);
 
 	const dispatch = useAppDispatch();
 

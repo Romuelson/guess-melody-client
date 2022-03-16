@@ -1,15 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable default-case */
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable import/no-cycle */
+
 import request from 'axios';
 import { setError } from '../store/slices/error/error';
 
-import setupStore from '../store/store';
+import { store } from '../store/store';
 
 import { clearErrorAction } from './api-actions';
 import { ErrorType } from '../types/error';
 import { HttpCode } from '../const';
 
-const store = setupStore();
-
-// eslint-disable-next-line import/prefer-default-export
 export const errorHandle = (error: ErrorType): void => {
 	if (!request.isAxiosError(error)) {
 		throw error;
@@ -23,7 +26,6 @@ export const errorHandle = (error: ErrorType): void => {
 	const { response } = error;
 
 	if (response) {
-		// eslint-disable-next-line default-case
 		switch (response.status) {
 			case HttpCode.BAD_REQUEST:
 				handleError(response.data.error);

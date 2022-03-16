@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 import Logo from '@images/melody-logo.png';

@@ -37,10 +37,10 @@ export enum APIRoute {
 }
 
 export enum ReducerType {
-	Process = 'game/process',
-	Data = 'game/data',
-	User = 'user/process',
-	Error = 'error',
+	Process = 'PROCESS',
+	Data = 'DATA',
+	User = 'USER',
+	Error = 'ERROR',
 }
 
 export enum ActionType {

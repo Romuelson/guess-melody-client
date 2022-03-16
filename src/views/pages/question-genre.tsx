@@ -4,12 +4,8 @@
 /* eslint-disable react/style-prop-object */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, {
-	ChangeEvent,
-	FormEvent,
-	useState,
-	PropsWithChildren,
-} from 'react';
+
+import { ChangeEvent, FormEvent, useState, PropsWithChildren } from 'react';
 
 import {
 	QuestionGenreType,

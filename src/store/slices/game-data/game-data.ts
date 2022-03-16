@@ -2,14 +2,18 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Questions } from '../../../types/question';
 import { ActionType, ReducerType } from '../../../const';
-import { GameData } from '../../../types/state';
+
+type GameData = {
+	questions: Questions;
+	isDataLoaded: boolean;
+};
 
 const initialState: GameData = {
 	questions: [],
 	isDataLoaded: false,
 };
 
-const gameData = createSlice({
+export const gameData = createSlice({
 	name: ReducerType.Data,
 	initialState,
 	reducers: {
@@ -24,4 +28,3 @@ const gameData = createSlice({
 });
 
 export const { loadQuestions } = gameData.actions;
-export default gameData.reducer;
