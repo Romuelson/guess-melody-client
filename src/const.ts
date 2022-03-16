@@ -58,4 +58,5 @@ export enum AsyncActionType {
 	Login = '/asLogin',
 	Logout = '/asLogout',
 	ClearError = '/clearError',
+	RedirectToRoute = '/redirectToRoute',
 }

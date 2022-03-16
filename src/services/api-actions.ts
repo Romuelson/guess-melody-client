@@ -7,6 +7,7 @@ import {
 	AsyncActionType,
 	AuthorizationStatus,
 	TIMEOUT_SHOW_ERROR,
+	AppRoute,
 } from '../const';
 import { Questions } from '../types/question';
 import { loadQuestions } from '../store/slices/game-data/game-data';
@@ -19,6 +20,7 @@ import { UserData } from '../types/user-data';
 import { dropToken, saveToken } from './token';
 import { setError } from '../store/slices/error/error';
 import { errorHandle } from './error-handle';
+import { redirectToRoute } from '../store/action';
 
 export const clearErrorAction = createAsyncThunk(
 	`${ReducerType.Error}${AsyncActionType.ClearError}`,
@@ -64,6 +66,7 @@ export const loginAction = createAsyncThunk(
 
 			saveToken(token);
 			store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+			store.dispatch(redirectToRoute(AppRoute.Result));
 		} catch (error) {
 			errorHandle(error);
 			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
