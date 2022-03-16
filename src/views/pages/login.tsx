@@ -1,8 +1,38 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
+import { FormEvent, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import melodyLogo from '@images/melody-logo.png';
 
+import { useAppDispatch } from '../../hooks/use-redux';
+import { AppRoute } from '../../const';
+import { AuthData } from '../../types/auth-data';
+import { loginAction } from '../../services/api-actions';
+
 function Login() {
+	const loginRef = useRef<HTMLInputElement | null>(null);
+	const passwordRef = useRef<HTMLInputElement | null>(null);
+
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
+
+	const onSubmit = (authData: AuthData) => {
+		dispatch(loginAction(authData));
+	};
+
+	const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+		evt.preventDefault();
+
+		if (loginRef.current !== null && passwordRef.current !== null) {
+			onSubmit({
+				login: loginRef.current.value,
+				password: passwordRef.current.value,
+			});
+		}
+	};
+
 	return (
 		<section className="login">
 			<div className="login__logo">
@@ -17,12 +47,13 @@ function Login() {
 			<p className="login__text">
 				Хотите узнать свой результат? Представтесь!
 			</p>
-			<form className="login__form" action="">
+			<form className="login__form" action="" onSubmit={handleSubmit}>
 				<p className="login__field">
 					<label className="login__label" htmlFor="name">
 						Логин
 					</label>
 					<input
+						ref={loginRef}
 						className="login__input"
 						type="text"
 						name="name"
@@ -34,6 +65,7 @@ function Login() {
 						Пароль
 					</label>
 					<input
+						ref={passwordRef}
 						className="login__input"
 						type="text"
 						name="password"
@@ -45,7 +77,11 @@ function Login() {
 					Войти
 				</button>
 			</form>
-			<button className="replay" type="button">
+			<button
+				onClick={() => navigate(AppRoute.Game)}
+				className="replay"
+				type="button"
+			>
 				Сыграть ещё раз
 			</button>
 		</section>
