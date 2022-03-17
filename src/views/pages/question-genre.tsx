@@ -1,4 +1,4 @@
-import { FormEvent, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 import {
 	QuestionGenreType,
@@ -7,8 +7,7 @@ import {
 
 import Logo from '../../components/logo/logo';
 
-import { useUserAnswers } from '../../hooks/use-user-answers';
-import GenreQuestionItem from '../../components/genre-question-item/genre-question-item';
+import GenreQuestionList from '../../components/genre-question-list/genre-question-list';
 
 type QuestionGenreProps = PropsWithChildren<{
 	question: QuestionGenreType;
@@ -21,9 +20,7 @@ type QuestionGenreProps = PropsWithChildren<{
 
 function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 	const { question, onAnswer, renderPlayer, children } = props;
-	const { answers, genre } = question;
-
-	const [userAnswers, handleAnswerChenge] = useUserAnswers(question);
+	const { genre } = question;
 
 	return (
 		<section className="game game--genre">
@@ -51,31 +48,11 @@ function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 
 			<section className="game__screen">
 				<h2 className="game__title">Выберите {genre} треки</h2>
-				<form
-					className="game__tracks"
-					onSubmit={(evt: FormEvent<HTMLFormElement>) => {
-						evt.preventDefault();
-						onAnswer(question, userAnswers);
-					}}
-				>
-					{answers.map((answer, id) => {
-						const keyValue = `${id}=${answer.src}`;
-						return (
-							<GenreQuestionItem
-								answer={answer}
-								id={id}
-								key={keyValue}
-								onChange={handleAnswerChenge}
-								renderPlayer={renderPlayer}
-								userAnswer={userAnswers[id]}
-							/>
-						);
-					})}
-
-					<button className="game__submit button" type="submit">
-						Ответить
-					</button>
-				</form>
+				<GenreQuestionList
+					question={question}
+					onAnswer={onAnswer}
+					renderPlayer={renderPlayer}
+				/>
 			</section>
 		</section>
 	);
