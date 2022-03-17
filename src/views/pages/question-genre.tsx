@@ -1,11 +1,4 @@
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/style-prop-object */
-/* eslint-disable jsx-a11y/media-has-caption */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-
-import { ChangeEvent, FormEvent, useState, PropsWithChildren } from 'react';
+import { FormEvent, PropsWithChildren } from 'react';
 
 import {
 	QuestionGenreType,
@@ -15,6 +8,7 @@ import {
 import Logo from '../../components/logo/logo';
 
 import { useUserAnswers } from '../../hooks/use-user-answers';
+import GenreQuestionItem from '../../components/genre-question-item/genre-question-item';
 
 type QuestionGenreProps = PropsWithChildren<{
 	question: QuestionGenreType;
@@ -67,31 +61,14 @@ function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 					{answers.map((answer, id) => {
 						const keyValue = `${id}=${answer.src}`;
 						return (
-							<div key={keyValue} className="track">
-								{renderPlayer(answer.src, id)}
-								<div className="game__answer">
-									<input
-										className="game__input visually-hidden"
-										type="checkbox"
-										name="answer"
-										value={`answer-${id}`}
-										id={`answer-${id}`}
-										checked={userAnswers[id]}
-										onChange={({
-											target,
-										}: ChangeEvent<HTMLInputElement>) => {
-											const value = target.checked;
-											handleAnswerChenge(id, value);
-										}}
-									/>
-									<label
-										className="game__check"
-										htmlFor={`answer-${id}`}
-									>
-										Отметить
-									</label>
-								</div>
-							</div>
+							<GenreQuestionItem
+								answer={answer}
+								id={id}
+								key={keyValue}
+								onChange={handleAnswerChenge}
+								renderPlayer={renderPlayer}
+								userAnswer={userAnswers[id]}
+							/>
 						);
 					})}
 
