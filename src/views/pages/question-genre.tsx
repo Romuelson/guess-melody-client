@@ -11,7 +11,10 @@ import {
 	QuestionGenreType,
 	UserGenreQuestionAnswer,
 } from '../../types/question';
+
 import Logo from '../../components/logo/logo';
+
+import { useUserAnswers } from '../../hooks/use-user-answers';
 
 type QuestionGenreProps = PropsWithChildren<{
 	question: QuestionGenreType;
@@ -26,12 +29,7 @@ function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 	const { question, onAnswer, renderPlayer, children } = props;
 	const { answers, genre } = question;
 
-	const [userAnswers, setUserAnswers] = useState([
-		false,
-		false,
-		false,
-		false,
-	]);
+	const [userAnswers, handleAnswerChenge] = useUserAnswers(question);
 
 	return (
 		<section className="game game--genre">
@@ -83,11 +81,7 @@ function QuestionGenre(props: QuestionGenreProps): JSX.Element {
 											target,
 										}: ChangeEvent<HTMLInputElement>) => {
 											const value = target.checked;
-											setUserAnswers([
-												...userAnswers.slice(0, id),
-												value,
-												...userAnswers.slice(id + 1),
-											]);
+											handleAnswerChenge(id, value);
 										}}
 									/>
 									<label
