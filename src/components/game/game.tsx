@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Navigate } from 'react-router-dom';
 
 import { AppRoute, GameType, MAX_MISTAKE_COUNT } from '../../const';
@@ -17,12 +16,19 @@ import {
 	checkUserAnswer,
 } from '../../store/slices/game-process/game-process';
 
+import {
+	getMistakesCount,
+	getStep,
+} from '../../store/slices/game-process/selectors';
+import { getQuestion } from '../../store/slices/game-data/selectors';
+
 const ArtistQuestionScreenWrapped = withAudioPlayer(QuestionArtist);
 const GenreQuestionScreenWrapped = withAudioPlayer(QuestionGenre);
 
 function Game(): JSX.Element {
-	const { mistakes, step } = useAppSelector(({ PROCESS }) => PROCESS);
-	const { questions } = useAppSelector(({ DATA }) => DATA);
+	const step = useAppSelector(getStep);
+	const mistakes = useAppSelector(getMistakesCount);
+	const questions = useAppSelector(getQuestion);
 
 	const dispatch = useAppDispatch();
 

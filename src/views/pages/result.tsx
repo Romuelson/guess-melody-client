@@ -9,8 +9,14 @@ import { useAppDispatch, useAppSelector } from '../../hooks/use-redux';
 import { logoutAction } from '../../services/api-actions';
 import { reset } from '../../store/slices/game-process/game-process';
 
+import {
+	getMistakesCount,
+	getStep,
+} from '../../store/slices/game-process/selectors';
+
 function Result() {
-	const { mistakes, step } = useAppSelector(({ PROCESS }) => PROCESS);
+	const step = useAppSelector(getStep);
+	const mistakes = useAppSelector(getMistakesCount);
 
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
