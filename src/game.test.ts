@@ -10,6 +10,13 @@ describe('Function: isArtistAnswerCorrect', () => {
 			true
 		);
 	});
+
+	it('should return "false" when answer is incorrect', () => {
+		const incorrectAnswer = 'unknown';
+		expect(isArtistAnswerCorrect(mockArtistQuestion, incorrectAnswer)).toBe(
+			false
+		);
+	});
 });
 
 export {};
