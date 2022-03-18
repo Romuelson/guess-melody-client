@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { internet, name, system } from 'faker';
+import { internet, music, name, system } from 'faker';
 import { GameType } from '../const';
-import { QuestionArtistType } from '../types/question';
+import { QuestionArtistType, QuestionGenreType } from '../types/question';
 
 export const makeFakeArtistQuestion = (): QuestionArtistType =>
 	({
@@ -15,3 +15,12 @@ export const makeFakeArtistQuestion = (): QuestionArtistType =>
 			.fill(null)
 			.map(() => ({ picture: internet.avatar(), artist: name.title() })),
 	} as QuestionArtistType);
+
+export const makeFakeGanreQuestion = (): QuestionGenreType =>
+	({
+		type: GameType.Genre,
+		genre: music.genre(),
+		answers: new Array(4)
+			.fill(null)
+			.map(() => ({ src: system.filePath(), genre: music.genre() })),
+	} as QuestionGenreType);
