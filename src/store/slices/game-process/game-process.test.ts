@@ -82,30 +82,27 @@ describe('Reducer: gameProcess', () => {
 			gameProcess.reducer(
 				state,
 				checkUserAnswer({
-					question: mockArtistQuestion,
+					question: mockGenreQuestion,
 					userAnswer: correctlyGenreQuestionAnswer,
 				})
 			)
 		).toEqual({ step: 0, mistakes: 0 });
+	});
 
-		it('should have reset game', () => {
-			expect(
-				gameProcess.reducer({ step: 5, mistakes: 1 }, reset())
-			).toEqual({ step: 0, mistakes: 0 });
+	it('should have reset game', () => {
+		expect(gameProcess.reducer({ step: 5, mistakes: 1 }, reset())).toEqual({
+			step: 0,
+			mistakes: 0,
+		});
 
-			expect(
-				gameProcess.reducer({ step: 0, mistakes: 0 }, reset())
-			).toEqual({
-				step: 0,
-				mistakes: 0,
-			});
+		expect(gameProcess.reducer({ step: 0, mistakes: 0 }, reset())).toEqual({
+			step: 0,
+			mistakes: 0,
+		});
 
-			expect(
-				gameProcess.reducer({ step: 2, mistakes: 0 }, reset())
-			).toEqual({
-				step: 0,
-				mistakes: 0,
-			});
+		expect(gameProcess.reducer({ step: 2, mistakes: 0 }, reset())).toEqual({
+			step: 0,
+			mistakes: 0,
 		});
 	});
 });

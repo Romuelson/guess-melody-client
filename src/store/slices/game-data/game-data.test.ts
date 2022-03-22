@@ -17,7 +17,7 @@ describe('Reducer: gameData', () => {
 		const state = { questions: [], isDataLoaded: false };
 
 		expect(gameData.reducer(state, loadQuestions(questions))).toEqual({
-			questions: [],
+			questions,
 			isDataLoaded: true,
 		});
 	});
