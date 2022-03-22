@@ -1,5 +1,7 @@
 /* eslint-disable import/no-cycle */
 
+import { AxiosInstance } from 'axios';
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
 	APIRoute,
@@ -12,7 +14,7 @@ import {
 import { Questions } from '../types/question';
 import { loadQuestions } from '../store/slices/game-data/game-data';
 
-import { store, api } from '../store/store';
+import { store, AppDispatch, AppStore } from '../store/store';
 import { requireAuthorization } from '../store/slices/user-process/user-process';
 
 import { AuthData } from '../types/auth-data';
@@ -29,60 +31,92 @@ export const clearErrorAction = createAsyncThunk(
 	}
 );
 
-export const fetchQuestionAction = createAsyncThunk(
+export const fetchQuestionAction = createAsyncThunk<
+	void,
+	undefined,
+	{
+		dispatch: AppDispatch;
+		state: AppStore;
+		extra: AxiosInstance;
+	}
+>(
 	`${ReducerType.Data}${AsyncActionType.FetchQuestions}`,
-	async () => {
+	async (_arg, { dispatch, extra: api }) => {
 		try {
 			const { data } = await api.get<Questions>(APIRoute.Questions);
 
-			store.dispatch(loadQuestions(data));
+			dispatch(loadQuestions(data));
 		} catch (error) {
 			errorHandle(error);
 		}
 	}
 );
 
-export const checkAuthAction = createAsyncThunk(
+export const checkAuthAction = createAsyncThunk<
+	void,
+	undefined,
+	{
+		dispatch: AppDispatch;
+		state: AppStore;
+		extra: AxiosInstance;
+	}
+>(
 	`${ReducerType.User}${AsyncActionType.CheckAuth}`,
-	async () => {
+	async (_arg, { dispatch, extra: api }) => {
 		try {
 			await api.get(APIRoute.Login);
 
-			store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
+			dispatch(requireAuthorization(AuthorizationStatus.Auth));
 		} catch (error) {
 			errorHandle(error);
-			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+			dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
 		}
 	}
 );
 
-export const loginAction = createAsyncThunk(
+export const loginAction = createAsyncThunk<
+	void,
+	AuthData,
+	{
+		dispatch: AppDispatch;
+		state: AppStore;
+		extra: AxiosInstance;
+	}
+>(
 	`${ReducerType.User}${AsyncActionType.Login}`,
-	async ({ login: email, password }: AuthData) => {
+	async ({ login: email, password }, { dispatch, extra: api }) => {
 		try {
 			const {
 				data: { token },
 			} = await api.post<UserData>(APIRoute.Login, { email, password });
 
 			saveToken(token);
-			store.dispatch(requireAuthorization(AuthorizationStatus.Auth));
-			store.dispatch(redirectToRoute(AppRoute.Result));
+			dispatch(requireAuthorization(AuthorizationStatus.Auth));
+			dispatch(redirectToRoute(AppRoute.Result));
 		} catch (error) {
 			errorHandle(error);
-			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+			dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
 		}
 	}
 );
 
-export const logoutAction = createAsyncThunk(
+export const logoutAction = createAsyncThunk<
+	void,
+	undefined,
+	{
+		dispatch: AppDispatch;
+		state: AppStore;
+		extra: AxiosInstance;
+	}
+>(
 	`${ReducerType.User}${AsyncActionType.Logout}`,
-	async () => {
+	async (_arg, { dispatch, extra: api }) => {
 		try {
 			await api.delete(APIRoute.Logout);
 
 			dropToken();
 
-			store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+			dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
 		} catch (error) {
 			errorHandle(error);
 		}

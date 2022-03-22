@@ -5,7 +5,7 @@ describe('Reducer: user', () => {
 	it('without additional parameters should return initial state', () => {
 		expect(
 			userProcess.reducer(undefined, { type: 'UNKNOWN_ACTION' })
-		).toEqual({ autorizationStatus: AuthorizationStatus.Unknown });
+		).toEqual({ authorizationStatus: AuthorizationStatus.Unknown });
 	});
 
 	it('should update authorizationStatus to "AUTH"', () => {
@@ -16,7 +16,7 @@ describe('Reducer: user', () => {
 				state,
 				requireAuthorization(AuthorizationStatus.Auth)
 			)
-		).toEqual({ autorizationStatus: AuthorizationStatus.Auth });
+		).toEqual({ authorizationStatus: AuthorizationStatus.Auth });
 	});
 
 	it('should update authorizationStatus to "NO_AUTH"', () => {
