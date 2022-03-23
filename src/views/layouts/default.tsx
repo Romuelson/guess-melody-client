@@ -2,11 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AppRoute, AuthorizationStatus, MAX_MISTAKE_COUNT } from '../../const';
 
-import NotFound from '../pages/not-found';
-import Welcome from '../pages/welcome';
-import Login from '../pages/login';
-import Lose from '../pages/lose';
-import Result from '../pages/result';
+import NotFound from '../pages/not-found/not-found';
+import Welcome from '../pages/welcome/welcome';
+import Login from '../pages/login/login';
+import Lose from '../pages/lose/lose';
+import Result from '../pages/result/result';
 import Game from '../../components/game/game';
 import PrivateRoute from '../../components/private-route/private-route';
 

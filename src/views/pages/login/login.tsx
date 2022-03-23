@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 import melodyLogo from '@images/melody-logo.png';
 
-import { useAppDispatch } from '../../hooks/use-redux';
-import { AppRoute } from '../../const';
-import { AuthData } from '../../types/auth-data';
-import { loginAction } from '../../services/api-actions';
+import { useAppDispatch } from '../../../hooks/use-redux';
+import { AppRoute } from '../../../const';
+import { AuthData } from '../../../types/auth-data';
+import { loginAction } from '../../../services/api-actions';
 
 function Login() {
 	const loginRef = useRef<HTMLInputElement | null>(null);

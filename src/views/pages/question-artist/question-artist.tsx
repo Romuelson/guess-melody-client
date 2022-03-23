@@ -8,8 +8,8 @@ import { ChangeEvent, PropsWithChildren } from 'react';
 import {
 	QuestionArtistType,
 	UserArtistQuestionAnswer,
-} from '../../types/question';
-import Logo from '../../components/logo/logo';
+} from '../../../types/question';
+import Logo from '../../../components/logo/logo';
 
 type QuestionArtistProps = PropsWithChildren<{
 	question: QuestionArtistType;

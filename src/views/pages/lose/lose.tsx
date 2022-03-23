@@ -3,10 +3,10 @@
 import melodyLogo from '@images/melody-logo.png';
 
 import { useNavigate } from 'react-router-dom';
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../../const';
 
-import { useAppDispatch } from '../../hooks/use-redux';
-import { reset } from '../../store/slices/game-process/game-process';
+import { useAppDispatch } from '../../../hooks/use-redux';
+import { reset } from '../../../store/slices/game-process/game-process';
 
 function Lose() {
 	const navigate = useNavigate();

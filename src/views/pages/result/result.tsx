@@ -4,15 +4,15 @@
 import melodyLogo from '@images/melody-logo.png';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { AppRoute } from '../../const';
-import { useAppDispatch, useAppSelector } from '../../hooks/use-redux';
-import { logoutAction } from '../../services/api-actions';
-import { reset } from '../../store/slices/game-process/game-process';
+import { AppRoute } from '../../../const';
+import { useAppDispatch, useAppSelector } from '../../../hooks/use-redux';
+import { logoutAction } from '../../../services/api-actions';
+import { reset } from '../../../store/slices/game-process/game-process';
 
 import {
 	getMistakesCount,
 	getStep,
-} from '../../store/slices/game-process/selectors';
+} from '../../../store/slices/game-process/selectors';
 
 function Result() {
 	const step = useAppSelector(getStep);

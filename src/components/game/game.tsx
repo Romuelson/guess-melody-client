@@ -5,8 +5,8 @@ import { AppRoute, GameType, MAX_MISTAKE_COUNT } from '../../const';
 import { Question, UserAnswer } from '../../types/question';
 
 import withAudioPlayer from '../../hocs/with-audio-player/with-audio-player';
-import QuestionArtist from '../../views/pages/question-artist';
-import QuestionGenre from '../../views/pages/question-genre';
+import QuestionArtist from '../../views/pages/question-artist/question-artist';
+import QuestionGenre from '../../views/pages/question-genre/question-genre';
 import Mistakes from '../mistakes/mistakes';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/use-redux';

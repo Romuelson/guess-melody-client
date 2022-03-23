@@ -3,11 +3,11 @@ import { PropsWithChildren } from 'react';
 import {
 	QuestionGenreType,
 	UserGenreQuestionAnswer,
-} from '../../types/question';
+} from '../../../types/question';
 
-import Logo from '../../components/logo/logo';
+import Logo from '../../../components/logo/logo';
 
-import GenreQuestionList from '../../components/genre-question-list/genre-question-list';
+import GenreQuestionList from '../../../components/genre-question-list/genre-question-list';
 
 type QuestionGenreProps = PropsWithChildren<{
 	question: QuestionGenreType;
