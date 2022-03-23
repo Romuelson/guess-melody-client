@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-// import melodyLogo from '@images/melody-logo.png';
+import melodyLogo from '@images/melody-logo.png';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../../const';
@@ -39,7 +39,7 @@ function Result() {
 			</div>
 			<div className="result__logo">
 				<img
-					src="images/melody-logo.png"
+					src={melodyLogo}
 					alt="Угадай мелодию"
 					width="186"
 					height="83"

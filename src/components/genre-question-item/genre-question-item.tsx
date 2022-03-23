@@ -1,35 +1,6 @@
 import { ChangeEvent } from 'react';
 import { GenreAnswer } from '../../types/question';
 
-/* eslint-disable no-lone-blocks */
-{
-	/* <div key={keyValue} className="track">
-								{renderPlayer(answer.src, id)}
-								<div className="game__answer">
-									<input
-										className="game__input visually-hidden"
-										type="checkbox"
-										name="answer"
-										value={`answer-${id}`}
-										id={`answer-${id}`}
-										checked={userAnswers[id]}
-										onChange={({
-											target,
-										}: ChangeEvent<HTMLInputElement>) => {
-											const value = target.checked;
-											handleAnswerChenge(id, value);
-										}}
-									/>
-									<label
-										className="game__check"
-										htmlFor={`answer-${id}`}
-									>
-										Отметить
-									</label>
-								</div>
-							</div> */
-}
-
 type GenreQuestionItemProps = {
 	answer: GenreAnswer;
 	id: number;

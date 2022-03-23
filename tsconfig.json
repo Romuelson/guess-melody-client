@@ -20,6 +20,6 @@
 		"jsx": "react-jsx",
 		"locale": "ru"
 	},
-	"include": ["src", "src/assets.d.ts", "src/jest-setup.ts"],
+	"include": ["src"],
 	"exclude": ["configs", "dist", "node_modules", "public"]
 }

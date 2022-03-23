@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-// import melodyLogo from '@images/melody-logo.png';
+import melodyLogo from '@images/melody-logo.png';
 
 import { useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../../const';
@@ -16,7 +16,7 @@ function Lose() {
 		<section className="result">
 			<div className="result__logo">
 				<img
-					src="images/melody-logo.png"
+					src={melodyLogo}
 					alt="Угадай мелодию"
 					width="186"
 					height="83"

@@ -9,6 +9,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: '[name].[contenthash].min.html',
+			template: './public/index.html',
 			minify: {
 				collapseWhitespace: true
 			}

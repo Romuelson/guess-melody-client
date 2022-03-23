@@ -2,7 +2,7 @@
 
 import { useNavigate } from 'react-router-dom';
 
-// import Logo from '@images/melody-logo.png';
+import Logo from '@images/melody-logo.png';
 
 import { AppRoute } from '../../../const';
 
@@ -20,12 +20,7 @@ function Welcome({ errorsCount }: WelcomeProps) {
 	return (
 		<section className="welcome">
 			<div className="welcome__logo">
-				<img
-					src="images/melody-logo.png"
-					alt="Угадай мелодию"
-					width="186"
-					height="83"
-				/>
+				<img src={Logo} alt="Угадай мелодию" width="186" height="83" />
 			</div>
 			<button
 				type="submit"

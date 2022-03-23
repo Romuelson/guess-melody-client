@@ -4,7 +4,7 @@
 import { FormEvent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// import melodyLogo from '@images/melody-logo.png';
+import melodyLogo from '@images/melody-logo.png';
 
 import { useAppDispatch } from '../../../hooks/use-redux';
 import { AppRoute } from '../../../const';
@@ -37,7 +37,7 @@ function Login() {
 		<section className="login">
 			<div className="login__logo">
 				<img
-					src="images/melody-logo.png"
+					src={melodyLogo}
 					alt="Угадай мелодию"
 					width="186"
 					height="83"

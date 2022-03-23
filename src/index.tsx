@@ -15,8 +15,6 @@ import App from './components/app/app';
 import ErrorMessage from './components/error-message/error-message';
 import { checkAuthAction, fetchQuestionAction } from './services/api-actions';
 
-const root = document.getElementById('root');
-
 store.dispatch(fetchQuestionAction());
 store.dispatch(checkAuthAction());
 
@@ -29,5 +27,5 @@ ReactDOM.render(
 			</HistoryRouter>
 		</Provider>
 	</StrictMode>,
-	root
+	document.getElementById('root')
 );
