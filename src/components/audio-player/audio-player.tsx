@@ -55,7 +55,7 @@ function AudioPlayer({
 				onClick={onPlayButtonClick}
 			/>
 			<div className="track__status">
-				<audio src={src} ref={audioRef} />
+				<audio src={src} ref={audioRef} data-testid="audio" />
 			</div>
 		</>
 	);
