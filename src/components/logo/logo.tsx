@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import { Link } from 'react-router-dom';
 
-import melodyLogoGinger from '@images/melody-logo-ginger.png';
+// import melodyLogoGinger from '@images/melody-logo-ginger.png';
 
 function Logo(): JSX.Element {
 	return (
@@ -9,7 +10,7 @@ function Logo(): JSX.Element {
 			<span className="visually-hidden">Сыграть ещё раз</span>
 			<img
 				className="game__logo"
-				src={melodyLogoGinger}
+				src="images/melody-logo-ginger.png"
 				alt="Угадай мелодию"
 			/>
 		</Link>
