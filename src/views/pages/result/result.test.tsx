@@ -5,51 +5,47 @@ import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import HistoryRouter from '../../../components/history-route/history-route';
-import Lose from './lose';
+import Result from './result';
 import { AppRoute } from '../../../const';
 
 const mockStore = configureMockStore();
 const history = createMemoryHistory();
-const store = mockStore({});
+history.push(AppRoute.Result);
 
-describe('Component: Lose', () => {
-	beforeEach(() => {
-		history.push(AppRoute.Lose);
-	});
+const store = mockStore({
+	GAME: { step: 10, mistakes: 2 },
+});
 
+describe('Component: WinScreen', () => {
 	it('should render correctly', () => {
 		render(
 			<Provider store={store}>
 				<HistoryRouter history={history}>
-					<Lose />
+					<Result />
 				</HistoryRouter>
 			</Provider>
 		);
 
-		expect(screen.getByText(/Какая жалость!/i)).toBeInTheDocument();
-		expect(
-			screen.getByText(/У вас закончились все попытки/i)
-		).toBeInTheDocument();
-		expect(screen.getByText(/Попробовать ещё раз/i)).toBeInTheDocument();
+		expect(screen.getByText(/Вы настоящий меломан!/i)).toBeInTheDocument();
 	});
 
-	it('when user click "Replay Button" should redirect', () => {
+	it('should redirect when user click "Replay Button"', () => {
 		render(
 			<Provider store={store}>
 				<HistoryRouter history={history}>
 					<Routes>
-						<Route path={AppRoute.Lose} element={<Lose />} />
+						<Route path={AppRoute.Result} element={<Result />} />
 						<Route
 							path={AppRoute.Game}
-							element={<h1>Mock Game Screen</h1>}
+							element={<h1>Game Screen</h1>}
 						/>
 					</Routes>
 				</HistoryRouter>
 			</Provider>
 		);
 
-		userEvent.click(screen.getByText(/Попробовать ещё раз/i));
+		userEvent.click(screen.getByText(/Сыграть ещё раз/i));
 
-		expect(screen.getByText(/Mock Game Screen/i)).toBeInTheDocument();
+		expect(screen.getByText('Game Screen')).toBeInTheDocument();
 	});
 });
