@@ -1,15 +1,23 @@
 # Личный проект «Guess Melody»
 
-* Студент: [Роман Арндт](https://htmlacademy.ru/profile/romuelson).
-* Преподавательский состав:
-[Алексей Симоненко](https://github.com/meritt)
-[Александр Першин](https://habr.com/ru/users/AlexPershin/)
-[Вадим Макеев](https://github.com/pepelsbey)
-[Игорь Алексеенко](https://github.com/o0)
-[Евгений Щепотьев](https://github.com/zeckson)
-[Олег Акинин](https://github.com/kicumkicum)
-[Игорь Антонов](https://github.com/AntonovIgor)
-[Александр Сушко](https://github.com/sashasushko)
+**Студент: [Роман Арндт](https://htmlacademy.ru/profile/romuelson)**
+
+Преподавательский состав:
+> [Алексей Симоненко](https://github.com/meritt)
+
+> [Александр Першин](https://habr.com/ru/users/AlexPershin/)
+
+> [Вадим Макеев](https://github.com/pepelsbey)
+
+> [Игорь Алексеенко](https://github.com/o0)
+
+> [Евгений Щепотьев](https://github.com/zeckson)
+
+> [Олег Акинин](https://github.com/kicumkicum)
+
+> [Игорь Антонов](https://github.com/AntonovIgor)
+
+> [Александр Сушко](https://github.com/sashasushko)
 
 ---
 
