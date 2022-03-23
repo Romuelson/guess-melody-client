@@ -9,7 +9,7 @@
 .env.development.local
 
 # Модули и производственные папки
-dist/
+# dist/
 node_modules/
 jspm_packages/
 bower_components/
