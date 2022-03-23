@@ -4,7 +4,7 @@
 import { FormEvent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import melodyLogo from '@images/melody-logo.png';
+// import melodyLogo from '@images/melody-logo.png';
 
 import { useAppDispatch } from '../../../hooks/use-redux';
 import { AppRoute } from '../../../const';
@@ -37,7 +37,7 @@ function Login() {
 		<section className="login">
 			<div className="login__logo">
 				<img
-					src={melodyLogo}
+					src="images/melody-logo.png"
 					alt="Угадай мелодию"
 					width="186"
 					height="83"
@@ -58,6 +58,7 @@ function Login() {
 						type="text"
 						name="name"
 						id="name"
+						data-testid="login"
 					/>
 				</p>
 				<p className="login__field">
@@ -70,6 +71,7 @@ function Login() {
 						type="text"
 						name="password"
 						id="password"
+						data-testid="password"
 					/>
 					<span className="login__error">Неверный пароль</span>
 				</p>
