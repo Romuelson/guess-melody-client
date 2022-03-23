@@ -9,7 +9,13 @@ function Mistakes({ count }: MistakesProps) {
 		<div className="game__mistakes">
 			{mistakes.map((_item, index) => {
 				const keyValue = `mistakes-${index}`;
-				return <div key={keyValue} className="wrong" />;
+				return (
+					<div
+						key={keyValue}
+						className="wrong"
+						data-testid="mistake"
+					/>
+				);
 			})}
 		</div>
 	);
