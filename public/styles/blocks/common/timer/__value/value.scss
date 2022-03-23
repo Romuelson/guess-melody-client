@@ -1,0 +1,26 @@
+.timer__value {
+	width: 260px;
+	font-size: 30px;
+	text-align: center;
+	color: #ff9749;
+}
+
+@keyframes shrink {
+	0%,
+	to {
+		transform: translateX(-50%) scale(1);
+	}
+
+	50% {
+		transform: translateX(-50%) scale(1.1);
+	}
+}
+
+.timer__value--finished {
+	color: red;
+	animation: shrink 2000ms infinite;
+}
+
+.timer__value--finished .timer__dots {
+	animation: none;
+}

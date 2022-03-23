@@ -1,0 +1,31 @@
+.result__replay {
+	position: relative;
+	margin-top: 30px;
+	padding: 0 40px 0 0;
+	font-size: 30px;
+	color: #ff9749;
+	background: 0 0;
+	border: 0;
+}
+
+.result__replay::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 27px;
+	height: 25px;
+	background-image: url('../images/sprite.png');
+	background-position: -5px -357px;
+	transform: translateY(-50%);
+}
+
+.result__replay:focus::after,
+.result__replay:hover::after {
+	background-position: -5px -392px;
+}
+
+.result__replay:focus,
+.result__replay:hover {
+	color: #f00000;
+}

@@ -1,0 +1,16 @@
+.track__button {
+	width: 39px;
+	height: 53px;
+	background-color: transparent;
+	background-image: url('../images/sprite.png');
+	border: 0;
+	cursor: pointer;
+}
+
+.track__button--play {
+	background-position: -5px -241px;
+}
+
+.track__button--pause {
+	background-position: -5px -294px;
+}

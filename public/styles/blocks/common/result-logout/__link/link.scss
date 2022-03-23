@@ -1,0 +1,12 @@
+.result-logout__link {
+	position: relative;
+	font-size: 30px;
+	color: #ff9749;
+	text-decoration: none;
+}
+
+.result-logout__link:hover,
+.result-logout__link:focus {
+	color: #f00000;
+	outline: none;
+}

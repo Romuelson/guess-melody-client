@@ -1,0 +1,18 @@
+.artist__picture {
+	width: 134px;
+	height: 134px;
+	margin-bottom: 5px;
+	background-color: #f0eed5;
+	border: solid 5px #230d1a;
+	border-radius: 134px;
+	cursor: pointer;
+}
+
+.artist:active .artist__picture {
+	border-color: #f00000;
+}
+
+.artist:hover .artist__picture,
+.artist__input:focus + .artist__name .artist__picture {
+	border-color: #ff9749;
+}

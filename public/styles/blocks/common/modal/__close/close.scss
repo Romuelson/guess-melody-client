@@ -1,0 +1,21 @@
+.modal__close {
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	background-color: transparent;
+	background-image: url('../images/icon-cross.svg');
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	border: 0;
+}
+
+.modal__close:hover {
+	opacity: 0.8;
+}
+
+.modal__close:focus {
+	opacity: 0.6;
+}

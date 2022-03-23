@@ -1,0 +1,28 @@
+.game__back {
+	position: relative;
+	z-index: 1;
+	width: 260px;
+	margin-left: 50px;
+}
+
+.game__back::before {
+	content: '';
+	position: absolute;
+	top: 25px;
+	left: -50px;
+	width: 40px;
+	height: 40px;
+	background-image: url('../images/right-arrow.svg');
+	background-repeat: no-repeat;
+	background-size: 40px;
+	transform: rotate(180deg);
+}
+
+.game__back:hover {
+	opacity: 0.8;
+}
+
+.game__back:active,
+.game__back:focus {
+	opacity: 0.6;
+}

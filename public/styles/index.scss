@@ -1,0 +1,89 @@
+/* Глобальные стили */
+// @import "./layouts/variables.scss";
+@import './layouts/base.scss';
+@import './layouts/fonts.scss';
+
+/* Блоки */
+@import './blocks/common/app/app.scss';
+@import './blocks/common/main/main.scss';
+@import './blocks/common/logo/logo.scss';
+
+@import './blocks/common/welcome/welcome.scss';
+@import './blocks/common/welcome/__logo/logo.scss';
+@import './blocks/common/welcome/__button/button.scss';
+@import './blocks/common/welcome/__rules-title/rules-title.scss';
+@import './blocks/common/welcome/__text/text.scss';
+@import './blocks/common/welcome/__rules-list/rules-list.scss';
+
+@import './blocks/common/button/button.scss';
+
+@import './blocks/common/game/game.scss';
+@import './blocks/common/game/__header/header.scss';
+@import './blocks/common/game/__back/back.scss';
+@import './blocks/common/game/__mistakes/mistakes.scss';
+@import './blocks/common/game/__screen/screen.scss';
+@import './blocks/common/game/__title/titile.scss';
+@import './blocks/common/game/__answer/answer.scss';
+@import './blocks/common/game/__check/check.scss';
+@import './blocks/common/game/__input/input.scss';
+@import './blocks/common/game/__submit/submit.scss';
+@import './blocks/common/game/__track/track.scss';
+@import './blocks/common/game/__artist/artist.scss';
+
+@import './blocks/common/timer/timer.scss';
+@import './blocks/common/timer/__line/line.scss';
+@import './blocks/common/timer/__value/value.scss';
+@import './blocks/common/timer/__dots/dots.scss';
+
+@import './blocks/common/track/track.scss';
+@import './blocks/common/track/__button/button.scss';
+@import './blocks/common/track/__status/status.scss';
+
+@import './blocks/common/artist/artist.scss';
+@import './blocks/common/artist/__picture/picture.scss';
+@import './blocks/common/artist/__text/text.scss';
+@import './blocks/common/artist/__time/time.scss';
+
+@import './blocks/common/replay/replay.scss';
+
+@import './blocks/common/login/login.scss';
+@import './blocks/common/login/__replay/replay.scss';
+@import './blocks/common/login/__logo/logo.scss';
+@import './blocks/common/login/__title/title.scss';
+@import './blocks/common/login/__total/total.scss';
+@import './blocks/common/login/__text/text.scss';
+@import './blocks/common/login/__form/form.scss';
+@import './blocks/common/login/__field/field.scss';
+@import './blocks/common/login/__label/label.scss';
+@import './blocks/common/login/__input/input.scss';
+@import './blocks/common/login/__error/error.scss';
+@import './blocks/common/login/__button/button.scss';
+
+@import './blocks/common/result/result.scss';
+@import './blocks/common/result/__logo/logo.scss';
+@import './blocks/common/result/__title/title.scss';
+@import './blocks/common/result/__total/total.scss';
+@import './blocks/common/result/__text/text.scss';
+@import './blocks/common/result/__replay/replay.scss';
+@import './blocks/common/result/__answer/answer.scss';
+@import './blocks/common/result/__list/list.scss';
+@import './blocks/common/result/__item/item.scss';
+@import './blocks/common/result/__extra/extra.scss';
+@import './blocks/common/result/__correct/correct.scss';
+@import './blocks/common/result/__wrong/wrong.scss';
+@import './blocks/common/result/__genre/genre.scss';
+
+@import './blocks/common/result-logout/result-logout.scss';
+@import './blocks/common/result-logout/__link/link.scss';
+
+@import './blocks/common/correct/correct.scss';
+
+@import './blocks/common/wrong/wrong.scss';
+
+@import './blocks/common/modal/modal.scss';
+@import './blocks/common/modal/__title/title.scss';
+@import './blocks/common/modal/__text/text.scss';
+@import './blocks/common/modal/__close/close.scss';
+@import './blocks/common/modal/__button/button.scss';
+
+@import './blocks/common/main-mistakes/main-mistakes.scss';

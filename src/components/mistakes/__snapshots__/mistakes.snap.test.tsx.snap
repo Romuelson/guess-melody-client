@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Mistakes should render correctly 1`] = `
+<div>
+  <div
+    class="game__mistakes"
+  >
+    <div
+      class="wrong"
+      data-testid="mistake"
+    />
+    <div
+      class="wrong"
+      data-testid="mistake"
+    />
+    <div
+      class="wrong"
+      data-testid="mistake"
+    />
+  </div>
+</div>
+`;
